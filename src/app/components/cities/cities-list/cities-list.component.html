@@ -1,0 +1,6 @@
+<h1 class="page-title">Weather</h1>
+<div class="cities-list">
+  <ng-container *ngFor="let city of cities$ | async">
+    <app-city-item [city]="city"></app-city-item>
+  </ng-container>
+</div>
