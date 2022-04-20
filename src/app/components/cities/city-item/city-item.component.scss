@@ -18,6 +18,9 @@
         outline: none;
         box-shadow: none;
         color: #000;
+        @media (max-width: 450px) {
+          padding: 6px;
+        }
 
         &::after {
           content: none;
@@ -67,6 +70,10 @@
         img {
           margin-top: 10px;
           margin-bottom: 10px;
+          @media (max-width: 450px) {
+            margin-top: 5px;
+            margin-bottom: 5px;
+          }
         }
         span {
           width: 100%;
