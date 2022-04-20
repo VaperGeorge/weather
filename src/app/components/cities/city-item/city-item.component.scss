@@ -1,0 +1,88 @@
+@import 'src/assets/styles/mixins';
+
+:host {
+  margin-bottom: 20px;
+  display: block;
+
+  ::ng-deep {
+    .accordion-item {
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 25px;
+      border: none;
+
+      .accordion-button {
+        background: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        outline: none;
+        box-shadow: none;
+        color: #000;
+        @media (max-width: 450px) {
+          padding: 6px;
+        }
+
+        &::after {
+          content: none;
+        }
+
+        .left {
+          font-size: 20px;
+          font-weight: 500;
+        }
+
+        .right {
+          text-align: right;
+          margin-right: 10px;
+
+          .temp {
+            display: block;
+            font-size: 20px;
+            margin-bottom: -10px;
+            &.hot {
+              color: #ec6e4c;
+            }
+          }
+          .wind {
+            font-size: 10px;
+            color: #4f4e4e;
+          }
+        }
+      }
+    }
+    .hourly-weather {
+      overflow-x: scroll;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      margin-top: -15px;
+      border-top: 1px solid #8fbce5;
+      @include scrollbar();
+
+      &__wrapper {
+        display: flex;
+        width: max-content;
+      }
+
+      &__item {
+        width: 95px;
+        padding: 0 5px;
+        text-align: center;
+        img {
+          margin-top: 10px;
+          margin-bottom: 10px;
+          @media (max-width: 450px) {
+            margin-top: 5px;
+            margin-bottom: 5px;
+          }
+        }
+        span {
+          width: 100%;
+          display: inline-block;
+          &.hot {
+            color: #ec6e4c;
+          }
+        }
+      }
+    }
+  }
+}

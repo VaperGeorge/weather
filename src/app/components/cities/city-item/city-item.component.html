@@ -1,0 +1,62 @@
+<ngb-accordion
+  [closeOthers]="true"
+  *ngIf="weather$.value"
+  (panelChange)="onPanelChange($event)"
+>
+  <ngb-panel>
+    <ng-template ngbPanelTitle>
+      <div class="left">
+        <img
+          width="50"
+          [src]="
+            'http://openweathermap.org/img/wn/' +
+            weather$.value.weather[0]?.icon +
+            '@2x.png'
+          "
+          alt=""
+          srcset=""
+        />
+        {{ city.name }}
+      </div>
+      <div class="right">
+        <span class="temp" [ngClass]="{ hot: weather$.value.main.temp >= 11 }"
+          >{{ weather$.value.main.temp }} °C</span
+        >
+        <span class="wind">Wind strength: {{ weather$.value.wind.speed }} m/s</span>
+      </div>
+    </ng-template>
+    <ng-template ngbPanelContent>
+      <div class="hourly-weather">
+        <div class="hourly-weather__wrapper">
+          <ng-container *ngIf="hourlyWeather$ | async as hourlyData">
+            <ng-container *ngFor="let hourly of hourlyData.hourly">
+              <div
+                class="hourly-weather__item"
+                *ngIf="
+                  (hourly.dt * 1000 | date: 'dd/MM/yyyy') ===
+                  (currentDate | date: 'dd/MM/yyyy')
+                "
+              >
+                <span>
+                  {{ hourly.dt * 1000 | date: 'HH:mm' }}
+                </span>
+                <img
+                  width="30"
+                  [ngbTooltip]="hourly.weather[0]?.description"
+                  [src]="
+                    'http://openweathermap.org/img/wn/' +
+                    hourly.weather[0]?.icon +
+                    '@2x.png'
+                  "
+                />
+                <span class="temp" [ngClass]="{ hot: hourly.temp >= 11 }">
+                  {{ hourly.temp }} °C
+                </span>
+              </div>
+            </ng-container>
+          </ng-container>
+        </div>
+      </div>
+    </ng-template>
+  </ngb-panel>
+</ngb-accordion>

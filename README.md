@@ -1,27 +1,36 @@
 # WeatherApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
+This project was generated with [Angular CLI] for recruitment process in Software Mind.
 
-## Development server
+Stack:
+node version: 10+
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+"@angular/animations": "~13.3.0",
+"@angular/common": "~13.3.0",
+"@angular/compiler": "~13.3.0",
+"@angular/core": "~13.3.0",
+"@angular/forms": "~13.3.0",
+"@angular/localize": "~13.3.0",
+"@angular/platform-browser": "~13.3.0",
+"@angular/platform-browser-dynamic": "~13.3.0",
+"@angular/router": "~13.3.0"
 
-## Code scaffolding
+Used libraries:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- I used the most popular Ng Bootstrap library to use already created components like: buttons, tabs, texts etc...
+- all other stuff were created without any external libs
 
-## Build
+Architecture:
+Here I tried to implement the simple architecture what we can improve in the future when if we will evolve oor project.
+Also I created the reusable components what can be used in all places of our app.
+Of course here present only 1 module, but if it will be necessary we can create separated modules for each future section and use the Lazy loading to improve the App speed
+And for now here we don't have Angular SSR implement because it is not needed at this stage of the project
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Styles:
+I used the SCSS preprocess like default one in the project because with this one we can simply create the variables and mixins and reuse them in all our components.
+Also SCSS has the cascade structure that improve reading the code and helps to avoid overriding the another parts of App.
+For Responsive Web Design I used the standard Media Queries to fit the App for small screens
 
-## Running unit tests
+To start the project in dev mode, use:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+# ng start
