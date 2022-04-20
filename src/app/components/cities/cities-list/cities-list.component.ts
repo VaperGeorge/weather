@@ -9,11 +9,6 @@ import { cities } from 'src/assets/api/cities';
   templateUrl: './cities-list.component.html',
   styleUrls: ['./cities-list.component.scss'],
 })
-export class CitiesListComponent implements OnInit {
+export class CitiesListComponent {
   public cities$ = new BehaviorSubject<Array<City>>(cities);
-
-  constructor() {}
-
-  ngOnInit() {
-  }
 }

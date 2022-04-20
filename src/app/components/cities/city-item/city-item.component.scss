@@ -1,3 +1,5 @@
+@import 'src/assets/styles/mixins';
+
 :host {
   margin-bottom: 20px;
   display: block;
@@ -15,7 +17,8 @@
         justify-content: space-between;
         outline: none;
         box-shadow: none;
-        
+        color: #000;
+
         &::after {
           content: none;
         }
@@ -40,6 +43,36 @@
           .wind {
             font-size: 10px;
             color: #4f4e4e;
+          }
+        }
+      }
+    }
+    .hourly-weather {
+      overflow-x: scroll;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      margin-top: -15px;
+      border-top: 1px solid #8fbce5;
+      @include scrollbar();
+
+      &__wrapper {
+        display: flex;
+        width: max-content;
+      }
+
+      &__item {
+        width: 95px;
+        padding: 0 5px;
+        text-align: center;
+        img {
+          margin-top: 10px;
+          margin-bottom: 10px;
+        }
+        span {
+          width: 100%;
+          display: inline-block;
+          &.hot {
+            color: #ec6e4c;
           }
         }
       }

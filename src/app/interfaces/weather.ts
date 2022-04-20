@@ -14,14 +14,6 @@ export interface WeatherData {
   cod: number;
 }
 
-export interface HourlyWeather {
-  cod: string;
-  message: number;
-  cnt: number;
-  list: HourlyWeatherItem[];
-  city: City;
-}
-
 export interface WeatherCoord {
   lon: number;
   lat: number;
@@ -62,29 +54,46 @@ export interface Wind {
   gust: number;
 }
 
-export interface HourlyWeatherItem {
+export interface CurrentWeather {
   dt: number;
-  main: WeatherMain;
-  weather: Weather[];
-  clouds: Clouds;
-  wind: Wind;
-  visibility: number;
-  pop: number;
-  sys: WeatherSys;
-  dt_txt: string;
-}
-
-export interface WeatherCoord {
-  lat: number;
-  lon: number;
-}
-
-export interface City {
-  id: number;
-  name: string;
-  coord: WeatherCoord;
-  country: string;
-  timezone: number;
   sunrise: number;
   sunset: number;
+  temp: number;
+  feels_like: number;
+  pressure: number;
+  humidity: number;
+  dew_point: number;
+  uvi: number;
+  clouds: number;
+  visibility: number;
+  wind_speed: number;
+  wind_deg: number;
+  weather: Weather[];
+}
+
+export interface HourlyWeatherItem {
+  dt: number;
+  temp: number;
+  feels_like: number;
+  pressure: number;
+  humidity: number;
+  dew_point: number;
+  uvi: number;
+  clouds: number;
+  visibility: number;
+  wind_speed: number;
+  wind_deg: number;
+  wind_gust: number;
+  weather: Weather[];
+  pop: number;
+  rain: any;
+}
+
+export interface HourlyWeather {
+  lat: number;
+  lon: number;
+  timezone: string;
+  timezone_offset: number;
+  current: CurrentWeather;
+  hourly: HourlyWeatherItem[];
 }

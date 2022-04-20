@@ -24,14 +24,16 @@ export class WeatherService {
       .pipe(take(1));
   }
 
-  getHourlyWeather(cityName: string) {
+  getHourlyWeather(lat: number, lng: number) {
     const params = new HttpParams()
-      .set('q', `${cityName}`)
+      .set('lat', `${lat}`)
+      .set('lon', `${lng}`)
       .set('appid', API_KEY)
-      .set('units', 'metric');
+      .set('units', 'metric')
+      .set('exclude', 'daily');
 
     return this.http
-      .get<HourlyWeather>(`${API_URL}/forecast/hourly`, { params })
+      .get<HourlyWeather>(`${API_URL}/onecall`, { params })
       .pipe(take(1));
   }
 }
