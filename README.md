@@ -27,8 +27,9 @@ Of course here present only 1 module, but if it will be necessary we can create 
 And for now here we don't have Angular SSR implement because it is not needed at this stage of the project
 
 Styles:
-I used the SCSS preprocess like default one in the project because with this one we can simply create the variables and mixins and reuse them in all our components,
-also SCSS has the cascade structure that improve reading the code and helps to avoid overriding the another parts of App.
+I used the SCSS preprocess like default one in the project because with this one we can simply create the variables and mixins and reuse them in all our components.
+Also SCSS has the cascade structure that improve reading the code and helps to avoid overriding the another parts of App.
+For Responsive Web Design I used the standard Media Queries to fit the App for small screens
 
 To start the project in dev mode, use:
 
