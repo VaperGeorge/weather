@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Observable, take } from 'rxjs';
 import { HourlyWeather, WeatherData } from '../interfaces/weather';
 
 const API_URL = environment.apiUrl;
@@ -19,9 +18,7 @@ export class WeatherService {
       .set('appid', API_KEY)
       .set('units', 'metric');
 
-    return this.http
-      .get<WeatherData>(`${API_URL}/weather`, { params })
-      .pipe(take(1));
+    return this.http.get<WeatherData>(`${API_URL}/weather`, { params });
   }
 
   getHourlyWeather(lat: number, lng: number) {
@@ -32,8 +29,6 @@ export class WeatherService {
       .set('units', 'metric')
       .set('exclude', 'daily');
 
-    return this.http
-      .get<HourlyWeather>(`${API_URL}/onecall`, { params })
-      .pipe(take(1));
+    return this.http.get<HourlyWeather>(`${API_URL}/onecall`, { params });
   }
 }

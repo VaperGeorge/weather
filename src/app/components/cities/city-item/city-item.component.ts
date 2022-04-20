@@ -1,5 +1,6 @@
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, take } from 'rxjs';
 import { Component, Input, OnInit } from '@angular/core';
+import { NgbPanelChangeEvent } from '@ng-bootstrap/ng-bootstrap';
 
 import { WeatherService } from 'src/app/services/weather.service';
 import { City } from 'src/app/interfaces/city';
@@ -22,17 +23,19 @@ export class CityItemComponent implements OnInit {
   constructor(protected weatherService: WeatherService) {}
 
   ngOnInit() {
-    if (this.city) {
-      this.weatherService.getWeather(this.city.name).subscribe((data) => {
+    this.weatherService
+      .getWeather(this.city.name)
+      .pipe(take(1))
+      .subscribe((data) => {
         this.weather$.next(data);
       });
-    }
   }
 
-  onPanelChange(event: any) {
+  onPanelChange(event: NgbPanelChangeEvent) {
     if (event.nextState && !this.hourlyWeather$.value) {
       this.weatherService
         .getHourlyWeather(this.city.lat, this.city.long)
+        .pipe(take(1))
         .subscribe((data) => {
           this.hourlyWeather$.next(data);
         });

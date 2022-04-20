@@ -8,6 +8,7 @@ import { cities } from 'src/assets/api/cities';
 import { WeatherData } from 'src/app/interfaces/weather';
 
 import { CityItemComponent } from './city-item.component';
+import { City } from 'src/app/interfaces/city';
 
 describe('CityItemComponent', () => {
   let component: CityItemComponent;
@@ -31,19 +32,6 @@ describe('CityItemComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
-  });
-
-  it('after OnInit we need to get the weather and set it to the weather$ value if we have city provided', () => {
-    component.city = cities[0];
-    component.ngOnInit();
-
-    component.weather$.subscribe((res) => {
-      if (res) {
-        expect(res).toBeTruthy();
-      } else {
-        expect(res).toBeFalsy();
-      }
-    });
   });
 
   it('should make a request when ngOnInit', () => {
@@ -90,7 +78,7 @@ describe('CityItemComponent', () => {
 
     const spy = spyOn(service, 'getWeather').and.returnValue(of(weather));
 
-    component.city = cities[0];
+    component.city = cities.pop() as City;
     component.ngOnInit();
 
     expect(spy).toHaveBeenCalled();
