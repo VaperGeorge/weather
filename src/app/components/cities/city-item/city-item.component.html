@@ -5,7 +5,7 @@
 >
   <ngb-panel>
     <ng-template ngbPanelTitle>
-      <div class="left">
+      <div class="accordion-button__left">
         <img
           width="50"
           [src]="
@@ -13,14 +13,12 @@
             weather$.value.weather[0]?.icon +
             '@2x.png'
           "
-          alt=""
-          srcset=""
         />
         {{ city.name }}
       </div>
-      <div class="right">
+      <div class="accordion-button__right">
         <span class="temp" [ngClass]="{ hot: weather$.value.main.temp >= 11 }"
-          >{{ weather$.value.main.temp }} °C</span
+          >{{ weather$.value.main.temp | number:'1.0-0' }} °C</span
         >
         <span class="wind">Wind strength: {{ weather$.value.wind.speed }} m/s</span>
       </div>
@@ -50,7 +48,7 @@
                   "
                 />
                 <span class="temp" [ngClass]="{ hot: hourly.temp >= 11 }">
-                  {{ hourly.temp }} °C
+                  {{ hourly.temp | number:'1.0-0' }} °C
                 </span>
               </div>
             </ng-container>

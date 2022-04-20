@@ -1,10 +1,10 @@
-import { HourlyWeather } from './../../../interfaces/weather';
 import { BehaviorSubject } from 'rxjs';
 import { Component, Input, OnInit } from '@angular/core';
 
 import { WeatherService } from 'src/app/services/weather.service';
 import { City } from 'src/app/interfaces/city';
 import { WeatherData } from 'src/app/interfaces/weather';
+import { HourlyWeather } from './../../../interfaces/weather';
 
 @Component({
   selector: 'app-city-item',
@@ -12,12 +12,12 @@ import { WeatherData } from 'src/app/interfaces/weather';
   styleUrls: ['./city-item.component.scss'],
 })
 export class CityItemComponent implements OnInit {
-  @Input() city: City;
+  @Input() city!: City;
 
   currentDate = new Date();
 
-  weather$ = new BehaviorSubject<WeatherData>(null);
-  hourlyWeather$ = new BehaviorSubject<HourlyWeather>(null);
+  weather$ = new BehaviorSubject<WeatherData>(null!);
+  hourlyWeather$ = new BehaviorSubject<HourlyWeather>(null!);
 
   constructor(protected weatherService: WeatherService) {}
 
