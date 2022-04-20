@@ -33,4 +33,5 @@ For Responsive Web Design I used the standard Media Queries to fit the App for s
 
 To start the project in dev mode, use:
 
-# ng start
+# npm install
+# ng serve / npm start
