@@ -3,7 +3,7 @@
 This project was generated with [Angular CLI] for recruitment process in Software Mind.
 
 Stack:
-node version: 10+
+node version: 12+
 
 "@angular/animations": "~13.3.0",
 "@angular/common": "~13.3.0",
