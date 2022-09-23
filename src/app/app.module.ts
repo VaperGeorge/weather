@@ -11,13 +11,23 @@ import { CitiesListComponent, CityItemComponent } from './components';
 import { LoggerService } from './services/logger/logger.service';
 import { loggerFactory } from './factory/logger-factory';
 import { environment } from 'src/environments/environment';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { WeatherService } from './services/weather.service';
 
 export const Environment = new InjectionToken('Environment');
 
 @NgModule({
   declarations: [AppComponent, CityItemComponent, CitiesListComponent],
-  imports: [BrowserModule, AppRoutingModule, NgbModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    NgbModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
   providers: [
+    WeatherService,
     {
       provide: LoggerService,
       useFactory: loggerFactory,

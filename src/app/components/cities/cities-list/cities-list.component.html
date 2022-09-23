@@ -1,6 +1,12 @@
 <h1 class="page-title">Weather</h1>
+
+<label for="check-adapter" class="main-label">
+  <input type="checkbox" name="" id="check-adapter" [formControl]="checkAdapter" />
+  Check Adapter
+</label>
+
 <div class="cities-list">
   <ng-container *ngFor="let city of cities$ | async">
-    <app-city-item [city]="city"></app-city-item>
+    <app-city-item [city]="city" [checkAdapter]="checkAdapter"></app-city-item>
   </ng-container>
 </div>

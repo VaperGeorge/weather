@@ -1,11 +1,14 @@
-import { BehaviorSubject, take } from 'rxjs';
+import { BehaviorSubject, mergeMap, startWith, take } from 'rxjs';
 import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
+
 import { NgbPanelChangeEvent } from '@ng-bootstrap/ng-bootstrap';
 
 import { WeatherService } from 'src/app/services/weather.service';
 import { City } from 'src/app/interfaces/city';
 import { WeatherData } from 'src/app/interfaces/weather';
 import { HourlyWeather } from './../../../interfaces/weather';
+import { WeatherXMLService } from 'src/app/services/weather-xml.service';
 
 @Component({
   selector: 'app-city-item',
@@ -20,12 +23,26 @@ export class CityItemComponent implements OnInit {
   weather$ = new BehaviorSubject<WeatherData>(null!);
   hourlyWeather$ = new BehaviorSubject<HourlyWeather>(null!);
 
-  constructor(protected weatherService: WeatherService) {}
+  @Input() checkAdapter = this.fb.control(false);
+
+  constructor(
+    protected weatherService: WeatherService,
+    protected weatherXMLService: WeatherXMLService,
+    protected fb: FormBuilder,
+  ) {}
 
   ngOnInit() {
-    this.weatherService
-      .getWeather(this.city.name)
-      .pipe(take(1))
+    this.checkAdapter.valueChanges
+      .pipe(
+        startWith(false),
+        mergeMap((value) => {
+          if (value) {
+            return this.weatherXMLService.getWeather().pipe(take(1));
+          } else {
+            return this.weatherService.getWeather(this.city.name).pipe(take(1));
+          }
+        }),
+      )
       .subscribe((data) => {
         this.weather$.next(data);
       });

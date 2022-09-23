@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { HourlyWeather, WeatherData } from '../interfaces/weather';
+import { Observable } from 'rxjs';
 
 const API_URL = environment.apiUrl;
 const API_KEY = environment.apiKey;
@@ -12,7 +13,7 @@ const API_KEY = environment.apiKey;
 export class WeatherService {
   constructor(protected http: HttpClient) {}
 
-  getWeather(cityName: string) {
+  getWeather(cityName: string): Observable<WeatherData> {
     const params = new HttpParams()
       .set('q', `${cityName}`)
       .set('appid', API_KEY)
@@ -21,7 +22,7 @@ export class WeatherService {
     return this.http.get<WeatherData>(`${API_URL}/weather`, { params });
   }
 
-  getHourlyWeather(lat: number, lng: number) {
+  getHourlyWeather(lat: number, lng: number): Observable<HourlyWeather> {
     const params = new HttpParams()
       .set('lat', `${lat}`)
       .set('lon', `${lng}`)
