@@ -1,0 +1,638 @@
+<svg version="1.1" baseProfile="full" width="5002.0" height="544.0" viewbox="0 0 5002 544" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events">
+<desc >#.interface: fill=lightblue
+#.enumeration: fill=lightgreen
+#.type: fill=lightgray
+[AppRoutingModule||]
+[AppComponent|+title: string;#loggerService: LoggerService|]
+[AppModule||]
+[&lt;interface&gt;City|+name: string;+iso2: string;+long: number;+lat: number|]
+[&lt;interface&gt;Environment|+name: &quot;dev&quot; \| &quot;production&quot;;+production: boolean;+apiUrl: string;+apiKey: string|]
+[&lt;interface&gt;WeatherData|+coord: WeatherCoord;+weather: Weather\[\];+base: string;+main: WeatherMain;+visibility: number;+wind: Wind;+clouds: Clouds;+dt: number;+sys: WeatherSys;+timezone: number;+id: number;+name: string;+cod: number|]
+[&lt;interface&gt;WeatherCoord|+lon: number;+lat: number|]
+[&lt;interface&gt;Weather|+id: number;+main: string;+description: string;+icon: string|]
+[&lt;interface&gt;WeatherMain|+temp: number;+feels_like: number;+temp_min: number;+temp_max: number;+pressure: number;+humidity: number|]
+[&lt;interface&gt;Clouds|+all: number|]
+[&lt;interface&gt;WeatherSys|+type: number;+id: number;+message: number;+country: string;+sunrise: number;+sunset: number|]
+[&lt;interface&gt;Wind|+speed: number;+deg: number;+gust: number|]
+[&lt;interface&gt;CurrentWeather|+dt: number;+sunrise: number;+sunset: number;+temp: number;+feels_like: number;+pressure: number;+humidity: number;+dew_point: number;+uvi: number;+clouds: number;+visibility: number;+wind_speed: number;+wind_deg: number;+weather: Weather\[\]|]
+[&lt;interface&gt;HourlyWeatherItem|+dt: number;+temp: number;+feels_like: number;+pressure: number;+humidity: number;+dew_point: number;+uvi: number;+clouds: number;+visibility: number;+wind_speed: number;+wind_deg: number;+wind_gust: number;+weather: Weather\[\];+pop: number;+rain: any|]
+[&lt;interface&gt;HourlyWeather|+lat: number;+lon: number;+timezone: string;+timezone_offset: number;+current: CurrentWeather;+hourly: HourlyWeatherItem\[\]|]
+[WeatherService|#http: HttpClient|+getWeather(): Observable&lt;WeatherData&gt;;+getHourlyWeather(): Observable&lt;HourlyWeather&gt;]
+[DevelopLoggerService||+setUser(): void;+getUser(): string;+login(): void]
+[LoggerService||+setUser(): void;+getUser(): string;+login(): void]
+[ProdLoggerService|#http: HttpClient;#environment: Environment|+setUser(): void;+getUser(): string;+login(): void]
+[CitiesListComponent|+cities$: BehaviorSubject&lt;City\[\]&gt;|]
+[CityItemComponent|+city: City;+currentDate: Date;+weather$: BehaviorSubject&lt;WeatherData&gt;;+hourlyWeather$: BehaviorSubject&lt;HourlyWeather&gt;;#weatherService: WeatherService|+ngOnInit(): void;+onPanelChange(): void]
+[OnInit]&lt;:--[CityItemComponent]</desc>
+<g stroke-width="1.0" text-align="left" font="12pt Helvetica, Arial, sans-serif" font-size="12pt" font-family="Helvetica" font-weight="bold" font-style="normal">
+<g transform="translate(0.5, 0.5)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round" stroke="#33322E">
+<g stroke="transparent" fill="transparent">
+<rect x="0.0" y="0.0" height="544.0" width="5002.0" stroke="none"></rect>
+</g>
+<g transform="translate(8, 8)" fill="#33322E">
+<g transform="translate(20, 20)" fill="#eee8d5" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal">
+<g stroke-dasharray="6 6">
+<path d="M4731.5 168.8 L4731.5 300 L4731.5 320 L4731.5 320.0 " fill="none"></path>
+</g>
+<path d="M4736.8 168.8 L4731.5 168.8 L4726.2 168.8 L4731.5 155.5 Z"></path>
+<g data-name="AppRoutingModule">
+<g fill="#eee8d5" stroke="#33322E" data-name="AppRoutingModule">
+<rect x="0.0" y="117.0" height="47.0" width="166.0" data-name="AppRoutingModule"></rect>
+<path d="M0.0 148.0 L166.0 148.0" fill="none" data-name="AppRoutingModule"></path>
+<path d="M0.0 156.0 L166.0 156.0" fill="none" data-name="AppRoutingModule"></path>
+</g>
+<g transform="translate(0, 117)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="AppRoutingModule">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="AppRoutingModule">
+<a id="src/app/app-routing.module.ts.AppRoutingModule" xlink:href="src/app/app-routing.module.ts"><text x="75.0" y="13.5" stroke="none" text-anchor="middle" data-name="AppRoutingModule">AppRoutingModule</text></a>
+
+</g>
+</g>
+<g transform="translate(0, 148)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="AppRoutingModule">
+<g transform="translate(8, 8)" fill="#33322E" data-name="AppRoutingModule">
+
+</g>
+</g>
+<g transform="translate(0, 156)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="AppRoutingModule">
+<g transform="translate(8, 8)" fill="#33322E" data-name="AppRoutingModule">
+
+</g>
+</g>
+</g>
+<g data-name="AppComponent">
+<g fill="#eee8d5" stroke="#33322E" data-name="AppComponent">
+<rect x="206.0" y="98.0" height="85.0" width="260.0" data-name="AppComponent"></rect>
+<path d="M206.0 129.0 L466.0 129.0" fill="none" data-name="AppComponent"></path>
+<path d="M206.0 175.0 L466.0 175.0" fill="none" data-name="AppComponent"></path>
+</g>
+<g transform="translate(206, 98)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="AppComponent">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="AppComponent">
+<a id="src/app/app.component.ts.AppComponent" xlink:href="src/app/app.component.ts"><text x="122.0" y="13.5" stroke="none" text-anchor="middle" data-name="AppComponent">AppComponent</text></a>
+
+</g>
+</g>
+<g transform="translate(206, 129)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="AppComponent">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="AppComponent">
+<text x="0.0" y="13.5" stroke="none" data-name="AppComponent">+title: string</text>
+<text x="0.0" y="28.5" stroke="none" data-name="AppComponent">#loggerService: LoggerService</text>
+
+</g>
+</g>
+<g transform="translate(206, 175)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="AppComponent">
+<g transform="translate(8, 8)" fill="#33322E" data-name="AppComponent">
+
+</g>
+</g>
+</g>
+<g data-name="AppModule">
+<g fill="#eee8d5" stroke="#33322E" data-name="AppModule">
+<rect x="506.0" y="117.0" height="47.0" width="105.0" data-name="AppModule"></rect>
+<path d="M506.0 148.0 L611.0 148.0" fill="none" data-name="AppModule"></path>
+<path d="M506.0 156.0 L611.0 156.0" fill="none" data-name="AppModule"></path>
+</g>
+<g transform="translate(506, 117)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="AppModule">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="AppModule">
+<a id="src/app/app.module.ts.AppModule" xlink:href="src/app/app.module.ts"><text x="44.5" y="13.5" stroke="none" text-anchor="middle" data-name="AppModule">AppModule</text></a>
+
+</g>
+</g>
+<g transform="translate(506, 148)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="AppModule">
+<g transform="translate(8, 8)" fill="#33322E" data-name="AppModule">
+
+</g>
+</g>
+<g transform="translate(506, 156)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="AppModule">
+<g transform="translate(8, 8)" fill="#33322E" data-name="AppModule">
+
+</g>
+</g>
+</g>
+<g data-name="City">
+<g fill="lightblue" stroke="#33322E" data-name="City">
+<rect x="651.0" y="83.0" height="115.0" width="130.0" data-name="City"></rect>
+<path d="M651.0 114.0 L781.0 114.0" fill="none" data-name="City"></path>
+<path d="M651.0 190.0 L781.0 190.0" fill="none" data-name="City"></path>
+</g>
+<g transform="translate(651, 83)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="City">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="City">
+<a id="src/app/interfaces/city.ts.City" xlink:href="src/app/interfaces/city.ts"><text x="57.0" y="13.5" stroke="none" text-anchor="middle" data-name="City">City</text></a>
+
+</g>
+</g>
+<g transform="translate(651, 114)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="City">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="City">
+<text x="0.0" y="13.5" stroke="none" data-name="City">+name: string</text>
+<text x="0.0" y="28.5" stroke="none" data-name="City">+iso2: string</text>
+<text x="0.0" y="43.5" stroke="none" data-name="City">+long: number</text>
+<text x="0.0" y="58.5" stroke="none" data-name="City">+lat: number</text>
+
+</g>
+</g>
+<g transform="translate(651, 190)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="City">
+<g transform="translate(8, 8)" fill="#33322E" data-name="City">
+
+</g>
+</g>
+</g>
+<g data-name="Environment">
+<g fill="lightblue" stroke="#33322E" data-name="Environment">
+<rect x="821.0" y="83.0" height="115.0" width="232.0" data-name="Environment"></rect>
+<path d="M821.0 114.0 L1053.0 114.0" fill="none" data-name="Environment"></path>
+<path d="M821.0 190.0 L1053.0 190.0" fill="none" data-name="Environment"></path>
+</g>
+<g transform="translate(821, 83)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Environment">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Environment">
+<a id="src/app/interfaces/environment.ts.Environment" xlink:href="src/app/interfaces/environment.ts"><text x="108.0" y="13.5" stroke="none" text-anchor="middle" data-name="Environment">Environment</text></a>
+
+</g>
+</g>
+<g transform="translate(821, 114)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Environment">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Environment">
+<text x="0.0" y="13.5" stroke="none" data-name="Environment">+name: &quot;dev&quot; | &quot;production&quot;</text>
+<text x="0.0" y="28.5" stroke="none" data-name="Environment">+production: boolean</text>
+<text x="0.0" y="43.5" stroke="none" data-name="Environment">+apiUrl: string</text>
+<text x="0.0" y="58.5" stroke="none" data-name="Environment">+apiKey: string</text>
+
+</g>
+</g>
+<g transform="translate(821, 190)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Environment">
+<g transform="translate(8, 8)" fill="#33322E" data-name="Environment">
+
+</g>
+</g>
+</g>
+<g data-name="WeatherData">
+<g fill="lightblue" stroke="#33322E" data-name="WeatherData">
+<rect x="1093.0" y="15.0" height="250.0" width="196.0" data-name="WeatherData"></rect>
+<path d="M1093.0 46.0 L1289.0 46.0" fill="none" data-name="WeatherData"></path>
+<path d="M1093.0 257.0 L1289.0 257.0" fill="none" data-name="WeatherData"></path>
+</g>
+<g transform="translate(1093, 15)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="WeatherData">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="WeatherData">
+<a id="src/app/interfaces/weather.ts.WeatherData" xlink:href="src/app/interfaces/weather.ts"><text x="90.0" y="13.5" stroke="none" text-anchor="middle" data-name="WeatherData">WeatherData</text></a>
+
+</g>
+</g>
+<g transform="translate(1093, 46)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="WeatherData">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="WeatherData">
+<text x="0.0" y="13.5" stroke="none" data-name="WeatherData">+coord: WeatherCoord</text>
+<text x="0.0" y="28.5" stroke="none" data-name="WeatherData">+weather: Weather[]</text>
+<text x="0.0" y="43.5" stroke="none" data-name="WeatherData">+base: string</text>
+<text x="0.0" y="58.5" stroke="none" data-name="WeatherData">+main: WeatherMain</text>
+<text x="0.0" y="73.5" stroke="none" data-name="WeatherData">+visibility: number</text>
+<text x="0.0" y="88.5" stroke="none" data-name="WeatherData">+wind: Wind</text>
+<text x="0.0" y="103.5" stroke="none" data-name="WeatherData">+clouds: Clouds</text>
+<text x="0.0" y="118.5" stroke="none" data-name="WeatherData">+dt: number</text>
+<text x="0.0" y="133.5" stroke="none" data-name="WeatherData">+sys: WeatherSys</text>
+<text x="0.0" y="148.5" stroke="none" data-name="WeatherData">+timezone: number</text>
+<text x="0.0" y="163.5" stroke="none" data-name="WeatherData">+id: number</text>
+<text x="0.0" y="178.5" stroke="none" data-name="WeatherData">+name: string</text>
+<text x="0.0" y="193.5" stroke="none" data-name="WeatherData">+cod: number</text>
+
+</g>
+</g>
+<g transform="translate(1093, 257)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="WeatherData">
+<g transform="translate(8, 8)" fill="#33322E" data-name="WeatherData">
+
+</g>
+</g>
+</g>
+<g data-name="WeatherCoord">
+<g fill="lightblue" stroke="#33322E" data-name="WeatherCoord">
+<rect x="1329.0" y="98.0" height="85.0" width="131.0" data-name="WeatherCoord"></rect>
+<path d="M1329.0 129.0 L1460.0 129.0" fill="none" data-name="WeatherCoord"></path>
+<path d="M1329.0 175.0 L1460.0 175.0" fill="none" data-name="WeatherCoord"></path>
+</g>
+<g transform="translate(1329, 98)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="WeatherCoord">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="WeatherCoord">
+<a id="src/app/interfaces/weather.ts.WeatherCoord" xlink:href="src/app/interfaces/weather.ts"><text x="57.5" y="13.5" stroke="none" text-anchor="middle" data-name="WeatherCoord">WeatherCoord</text></a>
+
+</g>
+</g>
+<g transform="translate(1329, 129)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="WeatherCoord">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="WeatherCoord">
+<text x="0.0" y="13.5" stroke="none" data-name="WeatherCoord">+lon: number</text>
+<text x="0.0" y="28.5" stroke="none" data-name="WeatherCoord">+lat: number</text>
+
+</g>
+</g>
+<g transform="translate(1329, 175)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="WeatherCoord">
+<g transform="translate(8, 8)" fill="#33322E" data-name="WeatherCoord">
+
+</g>
+</g>
+</g>
+<g data-name="Weather">
+<g fill="lightblue" stroke="#33322E" data-name="Weather">
+<rect x="1500.0" y="83.0" height="115.0" width="167.0" data-name="Weather"></rect>
+<path d="M1500.0 114.0 L1667.0 114.0" fill="none" data-name="Weather"></path>
+<path d="M1500.0 190.0 L1667.0 190.0" fill="none" data-name="Weather"></path>
+</g>
+<g transform="translate(1500, 83)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Weather">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Weather">
+<a id="src/app/interfaces/weather.ts.Weather" xlink:href="src/app/interfaces/weather.ts"><text x="75.5" y="13.5" stroke="none" text-anchor="middle" data-name="Weather">Weather</text></a>
+
+</g>
+</g>
+<g transform="translate(1500, 114)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Weather">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Weather">
+<text x="0.0" y="13.5" stroke="none" data-name="Weather">+id: number</text>
+<text x="0.0" y="28.5" stroke="none" data-name="Weather">+main: string</text>
+<text x="0.0" y="43.5" stroke="none" data-name="Weather">+description: string</text>
+<text x="0.0" y="58.5" stroke="none" data-name="Weather">+icon: string</text>
+
+</g>
+</g>
+<g transform="translate(1500, 190)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Weather">
+<g transform="translate(8, 8)" fill="#33322E" data-name="Weather">
+
+</g>
+</g>
+</g>
+<g data-name="WeatherMain">
+<g fill="lightblue" stroke="#33322E" data-name="WeatherMain">
+<rect x="1707.0" y="68.0" height="145.0" width="178.0" data-name="WeatherMain"></rect>
+<path d="M1707.0 99.0 L1885.0 99.0" fill="none" data-name="WeatherMain"></path>
+<path d="M1707.0 205.0 L1885.0 205.0" fill="none" data-name="WeatherMain"></path>
+</g>
+<g transform="translate(1707, 68)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="WeatherMain">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="WeatherMain">
+<a id="src/app/interfaces/weather.ts.WeatherMain" xlink:href="src/app/interfaces/weather.ts"><text x="81.0" y="13.5" stroke="none" text-anchor="middle" data-name="WeatherMain">WeatherMain</text></a>
+
+</g>
+</g>
+<g transform="translate(1707, 99)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="WeatherMain">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="WeatherMain">
+<text x="0.0" y="13.5" stroke="none" data-name="WeatherMain">+temp: number</text>
+<text x="0.0" y="28.5" stroke="none" data-name="WeatherMain">+feels_like: number</text>
+<text x="0.0" y="43.5" stroke="none" data-name="WeatherMain">+temp_min: number</text>
+<text x="0.0" y="58.5" stroke="none" data-name="WeatherMain">+temp_max: number</text>
+<text x="0.0" y="73.5" stroke="none" data-name="WeatherMain">+pressure: number</text>
+<text x="0.0" y="88.5" stroke="none" data-name="WeatherMain">+humidity: number</text>
+
+</g>
+</g>
+<g transform="translate(1707, 205)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="WeatherMain">
+<g transform="translate(8, 8)" fill="#33322E" data-name="WeatherMain">
+
+</g>
+</g>
+</g>
+<g data-name="Clouds">
+<g fill="lightblue" stroke="#33322E" data-name="Clouds">
+<rect x="1925.0" y="105.0" height="70.0" width="114.0" data-name="Clouds"></rect>
+<path d="M1925.0 136.0 L2039.0 136.0" fill="none" data-name="Clouds"></path>
+<path d="M1925.0 167.0 L2039.0 167.0" fill="none" data-name="Clouds"></path>
+</g>
+<g transform="translate(1925, 105)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Clouds">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Clouds">
+<a id="src/app/interfaces/weather.ts.Clouds" xlink:href="src/app/interfaces/weather.ts"><text x="49.0" y="13.5" stroke="none" text-anchor="middle" data-name="Clouds">Clouds</text></a>
+
+</g>
+</g>
+<g transform="translate(1925, 136)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Clouds">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Clouds">
+<text x="0.0" y="13.5" stroke="none" data-name="Clouds">+all: number</text>
+
+</g>
+</g>
+<g transform="translate(1925, 167)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Clouds">
+<g transform="translate(8, 8)" fill="#33322E" data-name="Clouds">
+
+</g>
+</g>
+</g>
+<g data-name="WeatherSys">
+<g fill="lightblue" stroke="#33322E" data-name="WeatherSys">
+<rect x="2079.0" y="68.0" height="145.0" width="168.0" data-name="WeatherSys"></rect>
+<path d="M2079.0 99.0 L2247.0 99.0" fill="none" data-name="WeatherSys"></path>
+<path d="M2079.0 205.0 L2247.0 205.0" fill="none" data-name="WeatherSys"></path>
+</g>
+<g transform="translate(2079, 68)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="WeatherSys">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="WeatherSys">
+<a id="src/app/interfaces/weather.ts.WeatherSys" xlink:href="src/app/interfaces/weather.ts"><text x="76.0" y="13.5" stroke="none" text-anchor="middle" data-name="WeatherSys">WeatherSys</text></a>
+
+</g>
+</g>
+<g transform="translate(2079, 99)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="WeatherSys">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="WeatherSys">
+<text x="0.0" y="13.5" stroke="none" data-name="WeatherSys">+type: number</text>
+<text x="0.0" y="28.5" stroke="none" data-name="WeatherSys">+id: number</text>
+<text x="0.0" y="43.5" stroke="none" data-name="WeatherSys">+message: number</text>
+<text x="0.0" y="58.5" stroke="none" data-name="WeatherSys">+country: string</text>
+<text x="0.0" y="73.5" stroke="none" data-name="WeatherSys">+sunrise: number</text>
+<text x="0.0" y="88.5" stroke="none" data-name="WeatherSys">+sunset: number</text>
+
+</g>
+</g>
+<g transform="translate(2079, 205)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="WeatherSys">
+<g transform="translate(8, 8)" fill="#33322E" data-name="WeatherSys">
+
+</g>
+</g>
+</g>
+<g data-name="Wind">
+<g fill="lightblue" stroke="#33322E" data-name="Wind">
+<rect x="2287.0" y="90.0" height="100.0" width="145.0" data-name="Wind"></rect>
+<path d="M2287.0 121.0 L2432.0 121.0" fill="none" data-name="Wind"></path>
+<path d="M2287.0 182.0 L2432.0 182.0" fill="none" data-name="Wind"></path>
+</g>
+<g transform="translate(2287, 90)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Wind">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Wind">
+<a id="src/app/interfaces/weather.ts.Wind" xlink:href="src/app/interfaces/weather.ts"><text x="64.5" y="13.5" stroke="none" text-anchor="middle" data-name="Wind">Wind</text></a>
+
+</g>
+</g>
+<g transform="translate(2287, 121)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Wind">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Wind">
+<text x="0.0" y="13.5" stroke="none" data-name="Wind">+speed: number</text>
+<text x="0.0" y="28.5" stroke="none" data-name="Wind">+deg: number</text>
+<text x="0.0" y="43.5" stroke="none" data-name="Wind">+gust: number</text>
+
+</g>
+</g>
+<g transform="translate(2287, 182)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Wind">
+<g transform="translate(8, 8)" fill="#33322E" data-name="Wind">
+
+</g>
+</g>
+</g>
+<g data-name="CurrentWeather">
+<g fill="lightblue" stroke="#33322E" data-name="CurrentWeather">
+<rect x="2472.0" y="8.0" height="265.0" width="191.0" data-name="CurrentWeather"></rect>
+<path d="M2472.0 39.0 L2663.0 39.0" fill="none" data-name="CurrentWeather"></path>
+<path d="M2472.0 265.0 L2663.0 265.0" fill="none" data-name="CurrentWeather"></path>
+</g>
+<g transform="translate(2472, 8)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="CurrentWeather">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="CurrentWeather">
+<a id="src/app/interfaces/weather.ts.CurrentWeather" xlink:href="src/app/interfaces/weather.ts"><text x="87.5" y="13.5" stroke="none" text-anchor="middle" data-name="CurrentWeather">CurrentWeather</text></a>
+
+</g>
+</g>
+<g transform="translate(2472, 39)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="CurrentWeather">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="CurrentWeather">
+<text x="0.0" y="13.5" stroke="none" data-name="CurrentWeather">+dt: number</text>
+<text x="0.0" y="28.5" stroke="none" data-name="CurrentWeather">+sunrise: number</text>
+<text x="0.0" y="43.5" stroke="none" data-name="CurrentWeather">+sunset: number</text>
+<text x="0.0" y="58.5" stroke="none" data-name="CurrentWeather">+temp: number</text>
+<text x="0.0" y="73.5" stroke="none" data-name="CurrentWeather">+feels_like: number</text>
+<text x="0.0" y="88.5" stroke="none" data-name="CurrentWeather">+pressure: number</text>
+<text x="0.0" y="103.5" stroke="none" data-name="CurrentWeather">+humidity: number</text>
+<text x="0.0" y="118.5" stroke="none" data-name="CurrentWeather">+dew_point: number</text>
+<text x="0.0" y="133.5" stroke="none" data-name="CurrentWeather">+uvi: number</text>
+<text x="0.0" y="148.5" stroke="none" data-name="CurrentWeather">+clouds: number</text>
+<text x="0.0" y="163.5" stroke="none" data-name="CurrentWeather">+visibility: number</text>
+<text x="0.0" y="178.5" stroke="none" data-name="CurrentWeather">+wind_speed: number</text>
+<text x="0.0" y="193.5" stroke="none" data-name="CurrentWeather">+wind_deg: number</text>
+<text x="0.0" y="208.5" stroke="none" data-name="CurrentWeather">+weather: Weather[]</text>
+
+</g>
+</g>
+<g transform="translate(2472, 265)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="CurrentWeather">
+<g transform="translate(8, 8)" fill="#33322E" data-name="CurrentWeather">
+
+</g>
+</g>
+</g>
+<g data-name="HourlyWeatherItem">
+<g fill="lightblue" stroke="#33322E" data-name="HourlyWeatherItem">
+<rect x="2703.0" y="0.0" height="280.0" width="191.0" data-name="HourlyWeatherItem"></rect>
+<path d="M2703.0 31.0 L2894.0 31.0" fill="none" data-name="HourlyWeatherItem"></path>
+<path d="M2703.0 272.0 L2894.0 272.0" fill="none" data-name="HourlyWeatherItem"></path>
+</g>
+<g transform="translate(2703, 0)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="HourlyWeatherItem">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="HourlyWeatherItem">
+<a id="src/app/interfaces/weather.ts.HourlyWeatherItem" xlink:href="src/app/interfaces/weather.ts"><text x="87.5" y="13.5" stroke="none" text-anchor="middle" data-name="HourlyWeatherItem">HourlyWeatherItem</text></a>
+
+</g>
+</g>
+<g transform="translate(2703, 31)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="HourlyWeatherItem">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="HourlyWeatherItem">
+<text x="0.0" y="13.5" stroke="none" data-name="HourlyWeatherItem">+dt: number</text>
+<text x="0.0" y="28.5" stroke="none" data-name="HourlyWeatherItem">+temp: number</text>
+<text x="0.0" y="43.5" stroke="none" data-name="HourlyWeatherItem">+feels_like: number</text>
+<text x="0.0" y="58.5" stroke="none" data-name="HourlyWeatherItem">+pressure: number</text>
+<text x="0.0" y="73.5" stroke="none" data-name="HourlyWeatherItem">+humidity: number</text>
+<text x="0.0" y="88.5" stroke="none" data-name="HourlyWeatherItem">+dew_point: number</text>
+<text x="0.0" y="103.5" stroke="none" data-name="HourlyWeatherItem">+uvi: number</text>
+<text x="0.0" y="118.5" stroke="none" data-name="HourlyWeatherItem">+clouds: number</text>
+<text x="0.0" y="133.5" stroke="none" data-name="HourlyWeatherItem">+visibility: number</text>
+<text x="0.0" y="148.5" stroke="none" data-name="HourlyWeatherItem">+wind_speed: number</text>
+<text x="0.0" y="163.5" stroke="none" data-name="HourlyWeatherItem">+wind_deg: number</text>
+<text x="0.0" y="178.5" stroke="none" data-name="HourlyWeatherItem">+wind_gust: number</text>
+<text x="0.0" y="193.5" stroke="none" data-name="HourlyWeatherItem">+weather: Weather[]</text>
+<text x="0.0" y="208.5" stroke="none" data-name="HourlyWeatherItem">+pop: number</text>
+<text x="0.0" y="223.5" stroke="none" data-name="HourlyWeatherItem">+rain: any</text>
+
+</g>
+</g>
+<g transform="translate(2703, 272)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="HourlyWeatherItem">
+<g transform="translate(8, 8)" fill="#33322E" data-name="HourlyWeatherItem">
+
+</g>
+</g>
+</g>
+<g data-name="HourlyWeather">
+<g fill="lightblue" stroke="#33322E" data-name="HourlyWeather">
+<rect x="2934.0" y="68.0" height="145.0" width="247.0" data-name="HourlyWeather"></rect>
+<path d="M2934.0 99.0 L3181.0 99.0" fill="none" data-name="HourlyWeather"></path>
+<path d="M2934.0 205.0 L3181.0 205.0" fill="none" data-name="HourlyWeather"></path>
+</g>
+<g transform="translate(2934, 68)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="HourlyWeather">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="HourlyWeather">
+<a id="src/app/interfaces/weather.ts.HourlyWeather" xlink:href="src/app/interfaces/weather.ts"><text x="115.5" y="13.5" stroke="none" text-anchor="middle" data-name="HourlyWeather">HourlyWeather</text></a>
+
+</g>
+</g>
+<g transform="translate(2934, 99)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="HourlyWeather">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="HourlyWeather">
+<text x="0.0" y="13.5" stroke="none" data-name="HourlyWeather">+lat: number</text>
+<text x="0.0" y="28.5" stroke="none" data-name="HourlyWeather">+lon: number</text>
+<text x="0.0" y="43.5" stroke="none" data-name="HourlyWeather">+timezone: string</text>
+<text x="0.0" y="58.5" stroke="none" data-name="HourlyWeather">+timezone_offset: number</text>
+<text x="0.0" y="73.5" stroke="none" data-name="HourlyWeather">+current: CurrentWeather</text>
+<text x="0.0" y="88.5" stroke="none" data-name="HourlyWeather">+hourly: HourlyWeatherItem[]</text>
+
+</g>
+</g>
+<g transform="translate(2934, 205)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="HourlyWeather">
+<g transform="translate(8, 8)" fill="#33322E" data-name="HourlyWeather">
+
+</g>
+</g>
+</g>
+<g data-name="WeatherService">
+<g fill="#eee8d5" stroke="#33322E" data-name="WeatherService">
+<rect x="3221.0" y="86.0" height="108.0" width="420.0" data-name="WeatherService"></rect>
+<path d="M3221.0 117.0 L3641.0 117.0" fill="none" data-name="WeatherService"></path>
+<path d="M3221.0 148.0 L3641.0 148.0" fill="none" data-name="WeatherService"></path>
+</g>
+<g transform="translate(3221, 86)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="WeatherService">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="WeatherService">
+<a id="src/app/services/weather.service.ts.WeatherService" xlink:href="src/app/services/weather.service.ts"><text x="202.0" y="13.5" stroke="none" text-anchor="middle" data-name="WeatherService">WeatherService</text></a>
+
+</g>
+</g>
+<g transform="translate(3221, 117)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="WeatherService">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="WeatherService">
+<text x="0.0" y="13.5" stroke="none" data-name="WeatherService">#http: HttpClient</text>
+
+</g>
+</g>
+<g transform="translate(3221, 148)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="WeatherService">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="WeatherService">
+<text x="0.0" y="13.5" stroke="none" data-name="WeatherService">+getWeather(): Observable&lt;WeatherData&gt;</text>
+<text x="0.0" y="28.5" stroke="none" data-name="WeatherService">+getHourlyWeather(): Observable&lt;HourlyWeather&gt;</text>
+
+</g>
+</g>
+</g>
+<g data-name="DevelopLoggerService">
+<g fill="#eee8d5" stroke="#33322E" data-name="DevelopLoggerService">
+<rect x="3681.0" y="90.0" height="100.0" width="196.0" data-name="DevelopLoggerService"></rect>
+<path d="M3681.0 121.0 L3877.0 121.0" fill="none" data-name="DevelopLoggerService"></path>
+<path d="M3681.0 129.0 L3877.0 129.0" fill="none" data-name="DevelopLoggerService"></path>
+</g>
+<g transform="translate(3681, 90)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="DevelopLoggerService">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="DevelopLoggerService">
+<a id="src/app/services/logger/develop-logger.service.ts.DevelopLoggerService" xlink:href="src/app/services/logger/develop-logger.service.ts"><text x="90.0" y="13.5" stroke="none" text-anchor="middle" data-name="DevelopLoggerService">DevelopLoggerService</text></a>
+
+</g>
+</g>
+<g transform="translate(3681, 121)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="DevelopLoggerService">
+<g transform="translate(8, 8)" fill="#33322E" data-name="DevelopLoggerService">
+
+</g>
+</g>
+<g transform="translate(3681, 129)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="DevelopLoggerService">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="DevelopLoggerService">
+<text x="0.0" y="13.5" stroke="none" data-name="DevelopLoggerService">+setUser(): void</text>
+<text x="0.0" y="28.5" stroke="none" data-name="DevelopLoggerService">+getUser(): string</text>
+<text x="0.0" y="43.5" stroke="none" data-name="DevelopLoggerService">+login(): void</text>
+
+</g>
+</g>
+</g>
+<g data-name="LoggerService">
+<g fill="#eee8d5" stroke="#33322E" data-name="LoggerService">
+<rect x="3917.0" y="90.0" height="100.0" width="154.0" data-name="LoggerService"></rect>
+<path d="M3917.0 121.0 L4071.0 121.0" fill="none" data-name="LoggerService"></path>
+<path d="M3917.0 129.0 L4071.0 129.0" fill="none" data-name="LoggerService"></path>
+</g>
+<g transform="translate(3917, 90)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="LoggerService">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="LoggerService">
+<a id="src/app/services/logger/logger.service.ts.LoggerService" xlink:href="src/app/services/logger/logger.service.ts"><text x="69.0" y="13.5" stroke="none" text-anchor="middle" data-name="LoggerService">LoggerService</text></a>
+
+</g>
+</g>
+<g transform="translate(3917, 121)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="LoggerService">
+<g transform="translate(8, 8)" fill="#33322E" data-name="LoggerService">
+
+</g>
+</g>
+<g transform="translate(3917, 129)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="LoggerService">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="LoggerService">
+<text x="0.0" y="13.5" stroke="none" data-name="LoggerService">+setUser(): void</text>
+<text x="0.0" y="28.5" stroke="none" data-name="LoggerService">+getUser(): string</text>
+<text x="0.0" y="43.5" stroke="none" data-name="LoggerService">+login(): void</text>
+
+</g>
+</g>
+</g>
+<g data-name="ProdLoggerService">
+<g fill="#eee8d5" stroke="#33322E" data-name="ProdLoggerService">
+<rect x="4111.0" y="71.0" height="138.0" width="233.0" data-name="ProdLoggerService"></rect>
+<path d="M4111.0 102.0 L4344.0 102.0" fill="none" data-name="ProdLoggerService"></path>
+<path d="M4111.0 148.0 L4344.0 148.0" fill="none" data-name="ProdLoggerService"></path>
+</g>
+<g transform="translate(4111, 71)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="ProdLoggerService">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="ProdLoggerService">
+<a id="src/app/services/logger/prod-logger.service.ts.ProdLoggerService" xlink:href="src/app/services/logger/prod-logger.service.ts"><text x="108.5" y="13.5" stroke="none" text-anchor="middle" data-name="ProdLoggerService">ProdLoggerService</text></a>
+
+</g>
+</g>
+<g transform="translate(4111, 102)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ProdLoggerService">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="ProdLoggerService">
+<text x="0.0" y="13.5" stroke="none" data-name="ProdLoggerService">#http: HttpClient</text>
+<text x="0.0" y="28.5" stroke="none" data-name="ProdLoggerService">#environment: Environment</text>
+
+</g>
+</g>
+<g transform="translate(4111, 148)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="ProdLoggerService">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="ProdLoggerService">
+<text x="0.0" y="13.5" stroke="none" data-name="ProdLoggerService">+setUser(): void</text>
+<text x="0.0" y="28.5" stroke="none" data-name="ProdLoggerService">+getUser(): string</text>
+<text x="0.0" y="43.5" stroke="none" data-name="ProdLoggerService">+login(): void</text>
+
+</g>
+</g>
+</g>
+<g data-name="CitiesListComponent">
+<g fill="#eee8d5" stroke="#33322E" data-name="CitiesListComponent">
+<rect x="4384.0" y="105.0" height="70.0" width="276.0" data-name="CitiesListComponent"></rect>
+<path d="M4384.0 136.0 L4660.0 136.0" fill="none" data-name="CitiesListComponent"></path>
+<path d="M4384.0 167.0 L4660.0 167.0" fill="none" data-name="CitiesListComponent"></path>
+</g>
+<g transform="translate(4384, 105)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="CitiesListComponent">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="CitiesListComponent">
+<a id="src/app/components/cities/cities-list/cities-list.component.ts.CitiesListComponent" xlink:href="src/app/components/cities/cities-list/cities-list.component.ts"><text x="130.0" y="13.5" stroke="none" text-anchor="middle" data-name="CitiesListComponent">CitiesListComponent</text></a>
+
+</g>
+</g>
+<g transform="translate(4384, 136)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="CitiesListComponent">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="CitiesListComponent">
+<text x="0.0" y="13.5" stroke="none" data-name="CitiesListComponent">+cities$: BehaviorSubject&lt;City[]&gt;</text>
+
+</g>
+</g>
+<g transform="translate(4384, 167)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="CitiesListComponent">
+<g transform="translate(8, 8)" fill="#33322E" data-name="CitiesListComponent">
+
+</g>
+</g>
+</g>
+<g data-name="CityItemComponent">
+<g fill="#eee8d5" stroke="#33322E" data-name="CityItemComponent">
+<rect x="4517.0" y="320.0" height="168.0" width="429.0" data-name="CityItemComponent"></rect>
+<path d="M4517.0 351.0 L4946.0 351.0" fill="none" data-name="CityItemComponent"></path>
+<path d="M4517.0 442.0 L4946.0 442.0" fill="none" data-name="CityItemComponent"></path>
+</g>
+<g transform="translate(4517, 320)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="CityItemComponent">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="CityItemComponent">
+<a id="src/app/components/cities/city-item/city-item.component.ts.CityItemComponent" xlink:href="src/app/components/cities/city-item/city-item.component.ts"><text x="206.5" y="13.5" stroke="none" text-anchor="middle" data-name="CityItemComponent">CityItemComponent</text></a>
+
+</g>
+</g>
+<g transform="translate(4517, 351)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="CityItemComponent">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="CityItemComponent">
+<text x="0.0" y="13.5" stroke="none" data-name="CityItemComponent">+city: City</text>
+<text x="0.0" y="28.5" stroke="none" data-name="CityItemComponent">+currentDate: Date</text>
+<text x="0.0" y="43.5" stroke="none" data-name="CityItemComponent">+weather$: BehaviorSubject&lt;WeatherData&gt;</text>
+<text x="0.0" y="58.5" stroke="none" data-name="CityItemComponent">+hourlyWeather$: BehaviorSubject&lt;HourlyWeather&gt;</text>
+<text x="0.0" y="73.5" stroke="none" data-name="CityItemComponent">#weatherService: WeatherService</text>
+
+</g>
+</g>
+<g transform="translate(4517, 442)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="CityItemComponent">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="CityItemComponent">
+<text x="0.0" y="13.5" stroke="none" data-name="CityItemComponent">+ngOnInit(): void</text>
+<text x="0.0" y="28.5" stroke="none" data-name="CityItemComponent">+onPanelChange(): void</text>
+
+</g>
+</g>
+</g>
+<g data-name="OnInit">
+<g fill="#eee8d5" stroke="#33322E" data-name="OnInit">
+<rect x="4700.0" y="125.0" height="31.0" width="63.0" data-name="OnInit"></rect>
+</g>
+<g transform="translate(4700, 125)" font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" data-name="OnInit">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="OnInit">
+<text x="23.5" y="13.5" stroke="none" text-anchor="middle" data-name="OnInit">OnInit</text>
+
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>
